@@ -96,7 +96,13 @@ public class Actions {
 	
 	@Test (priority = 4)
 	public void CloseBrowser() {
-		Mozila.close();
-		Reporter.log("Browser has been closed successfully");
+		try {
+			Mozila.close();
+			Reporter.log("Browser has been closed successfully");
+		}
+		catch (Exception e) {
+			Reporter.log("Browser hasn't been closed successfully");
+		}
+		
 	}
 }
