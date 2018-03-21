@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Mirabeau">
+	<test name="Incercare">
+		<classes>
+			<class name="TestAutomation.Actions">
+			</class>
+		</classes>
+	</test>
+</suite>
