@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.sikuli.script.Finder;
 import org.sikuli.script.Pattern;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -13,6 +14,7 @@ public class Actions {
 	
 	FirefoxDriver Mozila = new FirefoxDriver();
 	String NrOfResults;
+	String Suggestion;
 	
 	@Test	
 	public void OpenBrowser() {
@@ -49,16 +51,26 @@ public class Actions {
 		Mozila.findElement(By.xpath("//*[@id=\"search_query_top\"]")).clear();
 		Thread.sleep(500);
 		Mozila.findElement(By.xpath("//*[@id=\"search_query_top\"]")).sendKeys(SearchInfo);
+		Thread.sleep(2000);
+		
+		try {
+			Suggestion = Mozila.findElement(By.xpath("/html/body/div[2]/ul/li[1]")).getAttribute("innerText");
+			Assert.assertTrue(Suggestion.toLowerCase().contains(SearchInfo.toLowerCase()), "Search suggestion appeared and doesn't contain information about your search!");
+			Reporter.log("Search suggestion appeared and contain information about your search.");		
+		}
+		catch (Exception e) {
+			Reporter.log("There were no search suggestion for your search criteria "+ SearchInfo);
+		}
+		
 		Mozila.findElement(By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[2]/form/button")).click();
 		Thread.sleep(2000);
 		
 		try {
-			Mozila.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/p"));
 			NrOfResults = Mozila.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/ul")).getAttribute("childElementCount");
-			Reporter.log("The entered search information has returned "+ NrOfResults +" results");
+			Reporter.log("| The entered search information has returned "+ NrOfResults +" results");
 		}
 		catch (Exception e) {
-			Reporter.log("No results were found for your search "+ SearchInfo);
+			Reporter.log("| No results were found when searching for "+ SearchInfo);
 		}
 	}
 	
