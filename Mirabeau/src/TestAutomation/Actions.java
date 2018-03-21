@@ -1,7 +1,6 @@
 package TestAutomation;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.sikuli.script.Finder;
@@ -61,5 +60,11 @@ public class Actions {
 		catch (Exception e) {
 			Reporter.log("No results were found for your search "+ SearchInfo);
 		}
+	}
+	
+	@Test (priority = 3)
+	public void CloseBrowser() {
+		Mozila.close();
+		Reporter.log("Browser has been closed successfully");
 	}
 }
