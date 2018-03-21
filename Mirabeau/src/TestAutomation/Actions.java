@@ -15,6 +15,9 @@ public class Actions {
 	FirefoxDriver Mozila = new FirefoxDriver();
 	String NrOfResults;
 	String Suggestion;
+	String Items;
+	int Results;
+	int BadResult;
 	
 	@Test	
 	public void OpenBrowser() {
@@ -51,7 +54,7 @@ public class Actions {
 		Mozila.findElement(By.xpath("//*[@id=\"search_query_top\"]")).clear();
 		Thread.sleep(500);
 		Mozila.findElement(By.xpath("//*[@id=\"search_query_top\"]")).sendKeys(SearchInfo);
-		Thread.sleep(2000);
+		Thread.sleep(500);
 		
 		try {
 			Suggestion = Mozila.findElement(By.xpath("/html/body/div[2]/ul/li[1]")).getAttribute("innerText");
@@ -63,18 +66,35 @@ public class Actions {
 		}
 		
 		Mozila.findElement(By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[2]/form/button")).click();
-		Thread.sleep(2000);
-		
-		try {
-			NrOfResults = Mozila.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/ul")).getAttribute("childElementCount");
-			Reporter.log("| The entered search information has returned "+ NrOfResults +" results");
-		}
-		catch (Exception e) {
-			Reporter.log("| No results were found when searching for "+ SearchInfo);
-		}
+		Thread.sleep(1000);
 	}
 	
-	@Test (priority = 3)
+	@Test(dependsOnMethods = "Search")
+	@Parameters ({"SearchInformation"})
+	public void CheckResults(String CheckSearch) {
+		try {
+			if (Mozila.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/p")).isDisplayed()) {
+				Reporter.log("No results were found when searching for "+ CheckSearch);
+				return;
+			}			
+		}
+		catch (Exception e) {
+			NrOfResults = Mozila.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/ul")).getAttribute("childElementCount");
+			Results = Integer.parseInt(NrOfResults);
+			
+			for (int i = 1; i <= Results; i++) {
+				Items  = Mozila.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/ul/li["+ i +"]/div/div[2]/h5/a")).getText();
+				if (!Items.toLowerCase().contains(CheckSearch.toLowerCase())) {
+					BadResult ++;
+				}
+			}
+			Assert.assertTrue(BadResult == 0, "There are "+ BadResult +" results of the search for "+ CheckSearch +" that have no connection with this search!");
+			
+			Reporter.log("The search has worked correctly");
+		}	
+	}
+	
+	@Test (priority = 4)
 	public void CloseBrowser() {
 		Mozila.close();
 		Reporter.log("Browser has been closed successfully");
