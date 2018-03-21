@@ -1,9 +1,66 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Mirabeau">
-	<test name="Incercare">
+	<test name="TestCase1">
 		<classes>
 			<class name="TestAutomation.Actions">
+				<methods>
+					<include name="OpenBrowser" />
+					<include name="VisibleSearchBox" />
+					<include name="CloseBrowser" />
+				</methods>
 			</class>
 		</classes>
 	</test>
+	<test name="TestCase2">
+		<parameter name="SearchInformation" value="blouse" /> 
+		<classes>
+			<class name="TestAutomation.Actions">
+				<methods>
+					<include name="OpenBrowser" />
+					<include name="Search" />
+					<include name="CheckResults" />
+					<include name="CloseBrowser" />
+				</methods>
+			</class>
+		</classes>
+	</test>	 
+	<test name="TestCase3">
+		<parameter name="SearchInformation" value="dress" /> 
+		<classes>
+			<class name="TestAutomation.Actions">
+				<methods>
+					<include name="OpenBrowser" />
+					<include name="Search" />
+					<include name="CheckResults" />
+					<include name="CloseBrowser" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TestCase4">
+		<parameter name="SearchInformation" value="" /> 
+		<classes>
+			<class name="TestAutomation.Actions">
+				<methods>
+					<include name="OpenBrowser" />
+					<include name="Search" />
+					<include name="CheckResults" />
+					<include name="CloseBrowser" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="TestCase5">
+		<parameter name="SearchInformation" value="d*" /> 
+		<classes>
+			<class name="TestAutomation.Actions">
+				<methods>
+					<include name="OpenBrowser" />
+					<include name="Search" />
+					<include name="CheckResults" />
+					<include name="CloseBrowser" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
 </suite>
