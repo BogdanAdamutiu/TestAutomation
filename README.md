@@ -1,7 +1,7 @@
 # TestAutomation
 INTRODUCTION
 ------------
-Contains automated test cases that are used to test search function of web application Automationpractice.
+Automated test cases that are used to test search function of web application Automationpractice.
 
 
 
