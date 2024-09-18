@@ -4,6 +4,11 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Biggest_win__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Custom_Pipeline__c.Custom_Pipeline_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -13,7 +18,13 @@
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>Account-Account Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Custom_Pipeline__c-Custom Pipeline Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout</layout>
     </layoutAssignments>
     <loginHours n1:nil="true" />
     <objectPermissions>
