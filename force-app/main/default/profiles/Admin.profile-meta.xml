@@ -9,6 +9,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Days_since_last_deployment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Custom_Pipeline__c.Custom_Pipeline_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
