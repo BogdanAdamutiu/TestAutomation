@@ -7,8 +7,16 @@
         <field>Account.Days_since_last_deployment__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Deployment_date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Contact-Contact Layout</layout>
     </layoutAssignments>
     <loginHours n1:nil="true" />
     <userLicense>Salesforce</userLicense>
