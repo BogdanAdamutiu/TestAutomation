@@ -51,4 +51,14 @@
         <default>false</default>
         <label>Website</label>
     </standardValue>
+    <standardValue>
+        <fullName>Deployment testing</fullName>
+        <default>false</default>
+        <label>Deployment testing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bogdan</fullName>
+        <default>false</default>
+        <label>Bogdan</label>
+    </standardValue>
 </StandardValueSet>
