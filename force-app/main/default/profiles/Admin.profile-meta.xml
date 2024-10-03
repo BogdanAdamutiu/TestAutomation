@@ -9,6 +9,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Unit_tests_ran__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.Deployment_date__c</field>
         <readable>true</readable>
     </fieldPermissions>
