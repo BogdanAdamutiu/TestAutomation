@@ -26,11 +26,4 @@ public with sharing class AccountWrapper {
     }
     return returnValue;
   }
-  
-  public Boolean isHighPriority() {
-    if(getRoundedAvgPriceOfOpps() > 100000.00) {
-      return true;
-    }
-    return false;
-  }
 }
