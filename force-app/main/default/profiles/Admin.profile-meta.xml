@@ -19,6 +19,10 @@
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
     <loginHours n1:nil="true" />
+    <tabVisibilities>
+        <tab>Bogdan_Deploy</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
