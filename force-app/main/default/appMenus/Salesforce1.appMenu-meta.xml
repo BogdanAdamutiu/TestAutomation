@@ -13,6 +13,10 @@
         <type>StandardAppMenuItem</type>
     </appMenuItems>
     <appMenuItems>
+        <name>Bogdan_Deploy</name>
+        <type>CustomTab</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>Dashboards</name>
         <type>StandardAppMenuItem</type>
     </appMenuItems>
