@@ -37,6 +37,10 @@
                 <behavior>Edit</behavior>
                 <field>Unit_tests_ran__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>This_is_new__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
