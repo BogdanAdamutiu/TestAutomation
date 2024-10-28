@@ -36,10 +36,6 @@
                 <behavior>Edit</behavior>
                 <field>Rating</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>This_will_be_deleted__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -80,7 +76,7 @@
                 <field>Address</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
+        <layoutColumns></layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
@@ -88,8 +84,8 @@
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
         <label>Additional Information</label>
-        <layoutColumns/>
-        <layoutColumns/>
+        <layoutColumns></layoutColumns>
+        <layoutColumns></layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
@@ -97,7 +93,7 @@
         <detailHeading>false</detailHeading>
         <editHeading>true</editHeading>
         <label>Description Information</label>
-        <layoutColumns/>
+        <layoutColumns></layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
@@ -129,8 +125,8 @@
                 <customLink>GoogleMaps</customLink>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
-        <layoutColumns/>
+        <layoutColumns></layoutColumns>
+        <layoutColumns></layoutColumns>
         <style>CustomLinks</style>
     </layoutSections>
     <platformActionList>
